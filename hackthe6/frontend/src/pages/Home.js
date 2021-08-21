@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
       background: '#f2f2f2',
     },
   },
+  input: {
+    background: '#f2f2f2 !important',
+  },
 }));
 
 const Home = () => {
@@ -60,7 +63,11 @@ const Home = () => {
     if (valueRef.current.value === 'Garbage Bag') {
       setSecEx(true);
       setFirstEx(false);
+    } else {
+      setSecEx(false);
+      setFirstEx(false);
     }
+
     setSearch(valueRef.current.value); //on clicking button accesing current value of TextField and outputing it to console
   };
 
@@ -108,7 +115,9 @@ const Home = () => {
               placeholder="Search for your ware..."
               style={{ width: 500 }}
               inputRef={valueRef}
-              className="searchBar"
+              InputProps={{
+                className: classes.input,
+              }}
             />
           </Grid>
           <Grid item xs={1} align="center" style={{ marginTop: 15 }}>
