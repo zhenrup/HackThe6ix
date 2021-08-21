@@ -4,7 +4,7 @@ const Create = () => {
   return (
     <div className="create">
       <h2>Store Map</h2>
-      <img src={map} alt="Logo" style={{ height: '400px', width: '700px' }} />
+      <img src={map} alt="Logo" style={{ height: '400px', width: '600px' }} />
     </div>
   );
 };

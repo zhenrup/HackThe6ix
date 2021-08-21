@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       {/* <img src={logo} alt="Logo" style={{ height: '80px', width: '200px' }} /> */}
-      <h1>WHERE WARE?</h1>
+      <h1><span id='where'> Where</span>Ware?</h1>
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/map">Store Map</Link>

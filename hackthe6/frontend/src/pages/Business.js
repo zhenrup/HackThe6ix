@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
       width: '25ch',
-      background: '#f2f2f2',
+      // background: '#f2f2f2',
     },
   },
 }));
@@ -36,7 +36,7 @@ const Business = () => {
             <TextField
               id="name"
               label="Company Name"
-              variant="outlined"
+              variant="filled"
               placeholder="Name"
               style={{ width: 500 }}
               inputRef={nameRef}
@@ -46,7 +46,7 @@ const Business = () => {
             <TextField
               id="email"
               label="Company Email"
-              variant="outlined"
+              variant="filled"
               placeholder="Email"
               style={{ width: 500 }}
               inputRef={emailRef}
@@ -66,6 +66,8 @@ const Business = () => {
         </Grid>
       </form>
     </div>
+    
+    
   );
 };
 

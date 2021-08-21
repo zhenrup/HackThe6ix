@@ -4,18 +4,26 @@ import { Button, TextField, Grid, Link } from '@material-ui/core';
 import firstExPic from './storeMapEx1.png';
 import secExPic from './storeMapEx2.png';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& .MuiTextField-root': {
-//       margin: theme.spacing(1),
-//       width: '25ch',
-//       background: '#f2f2f2',
-//     },
-//   },
-//   input: {
-//     background: '#f2f2f2 !important',
-//   },
-// }));
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
+      background: '#f2f2f2',
+    },
+  },
+  input: {
+    background: '#f2f2f2 !important',
+  },
+  // overrides: {
+  //   MuiButton: {
+  //     raisedPrimary: {
+  //       color: 'white',
+  //     },
+  //   },
+  // }
+}));
 
 const Home = () => {
   const [search, setSearch] = useState('');
@@ -73,19 +81,20 @@ const Home = () => {
 
   return (
     <>
-      <Grid container>
-        <Grid item xs={3} align="right">
-          <h3>Welcome to</h3>
-        </Grid>
-
-        <Grid item xs={6} align="center">
-          <h2>WESTERN WIRE</h2>
-        </Grid>
-
-        <Grid item xs={3} align="left">
-          <h3>hardware store</h3>
-        </Grid>
+    <div className='frontPage'>
+    <Grid container>
+      <Grid item xs={3} align="right">
+        <h3>Welcome to</h3>
       </Grid>
+
+      <Grid item xs={6} align="center">
+        <h2>WESTERN WIRE</h2>
+      </Grid>
+      <Grid item xs={3} align="left">
+        <h4>578 Richmond Rd E, London, ON</h4>
+      </Grid>
+
+    </Grid>
 
       <Grid container>
         <Grid
@@ -110,7 +119,7 @@ const Home = () => {
           <Grid item xs={11} align="center" className="searchBar">
             <TextField
               id="search"
-              label="Need Help?"
+              label="Looking for items?"
               variant="filled"
               placeholder="Search for your ware..."
               style={{ width: 500 }}
@@ -122,8 +131,12 @@ const Home = () => {
           </Grid>
           <Grid item xs={1} align="center" style={{ marginTop: 15 }}>
             <Button
+              id="searchButton"
               variant="contained"
               size="small"
+              style={{
+                backgroundColor: "#B791F6",
+              }}
               // endIcon={<SendIcon />}
 
               onClick={sendValue}
@@ -150,13 +163,8 @@ const Home = () => {
           style={{ height: '400px', width: '600px' }}
         />
       )}
-
-      {/* {storeDir.map((item, i) => (
-        <li key={i}>
-          <Link to={item.link}>{item.name}</Link>
-        </li>
-      ))} */}
-    </>
+    </div>
+   </>
   );
 };
 
