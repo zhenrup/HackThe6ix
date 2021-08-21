@@ -1,4 +1,4 @@
-import map from './map.jpg';
+import map from './storeMap.png';
 
 const Create = () => {
   return (

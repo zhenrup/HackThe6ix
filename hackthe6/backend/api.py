@@ -9,7 +9,8 @@ def data():
     aisleFound = ""
 
     #temp df
-    df = pd.DataFrame({'Item': ['Light', "Car", "Bike", "Microwave", "Garbage Bag"], 'Aisle': ['Aisle 1b','Aisle 6c','Aisle 14d','Aisle 9b','Aisle 3f']})
+    directory=["Fasteners", "Building materials", "Car Maintenance", "Sport", "Hand tools" , "Power tools", "Lighting",  "Plumbing supplies", "Electrical supplies", "Cleaning products", "Housewares", "Tools", "Utensils", "Paint", "Lawn" , "Garden"]
+    df = pd.DataFrame({'Item': ['Lights', "Car", "Bike", "Microwave", "Garbage Bag"], 'Aisle': ['Aisle 7','Aisle 6','Aisle 14','Aisle 9','Aisle 11']})
     df = df.to_dict('records')
     print("search:", search)
 
@@ -22,6 +23,6 @@ def data():
             aisleFound = "Not in Store"
             
     print(aisleFound)
-    res = {"result": aisleFound}
+    res = {"result": aisleFound, 'dir': directory}
 
     return res

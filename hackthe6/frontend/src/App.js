@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Create from './pages/Create';
+import Map from './pages/Map';
+import Business from './pages/Business';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -13,8 +14,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/create">
-              <Create />
+            <Route path="/map">
+              <Map />
+            </Route>
+            <Route path="/business">
+              <Business />
             </Route>
           </Switch>
         </div>

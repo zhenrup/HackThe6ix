@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, TextField, Grid } from '@material-ui/core';
+import { Button, TextField, Grid, Link } from '@material-ui/core';
+import firstExPic from './storeMapEx1.png';
+import secExPic from './storeMapEx2.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,6 +16,11 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const [search, setSearch] = useState('');
   const [result, setResult] = useState('');
+  const [hideDir, setHideDir] = useState(false);
+  const [storeDir, setStoreDir] = useState([]);
+
+  const [firstEx, setFirstEx] = useState(false);
+  const [secEx, setSecEx] = useState(false);
   const firstUpdate = useRef(true);
   const valueRef = useRef('');
 
@@ -38,13 +45,21 @@ const Home = () => {
       .then((res) => res.json())
       .then((responseData) => {
         setResult(responseData.result);
+        setStoreDir(responseData.dir);
+
         console.log(responseData.result);
         console.log('fetch call worked');
       });
   }, [search]);
 
   const sendValue = () => {
-    console.log(valueRef.current.value);
+    if (valueRef.current.value === 'Lights') {
+      setFirstEx(true);
+    }
+    if (valueRef.current.value === 'Garbage Bag') {
+      setSecEx(true);
+      setFirstEx(false);
+    }
     setSearch(valueRef.current.value); //on clicking button accesing current value of TextField and outputing it to console
   };
 
@@ -74,8 +89,29 @@ const Home = () => {
           </Grid>
         </Grid>
       </form>
-
       <h1 align="center">{result}</h1>
+
+      {firstEx && (
+        <img
+          src={firstExPic}
+          alt="Logo"
+          style={{ height: '400px', width: '600px' }}
+        />
+      )}
+
+      {secEx && (
+        <img
+          src={secExPic}
+          alt="Logo"
+          style={{ height: '400px', width: '600px' }}
+        />
+      )}
+
+      {/* {storeDir.map((item, i) => (
+        <li key={i}>
+          <Link to={item.link}>{item.name}</Link>
+        </li>
+      ))} */}
     </>
   );
 };
