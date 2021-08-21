@@ -88,7 +88,7 @@ const Home = () => {
       </Grid>
 
       <Grid item xs={6} align="center">
-        <h2>WESTERN WIRE</h2>
+        <h2>Western Wire</h2>
       </Grid>
       <Grid item xs={3} align="left">
         <h4>578 Richmond Rd E, London, ON</h4>
