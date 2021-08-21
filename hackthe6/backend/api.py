@@ -10,7 +10,7 @@ def data():
 
     #temp df
     directory=["Fasteners", "Building materials", "Car Maintenance", "Sport", "Hand tools" , "Power tools", "Lighting",  "Plumbing supplies", "Electrical supplies", "Cleaning products", "Housewares", "Tools", "Utensils", "Paint", "Lawn" , "Garden"]
-    df = pd.DataFrame({'Item': ['Lights', "Car", "Bike", "Microwave", "Garbage Bag"], 'Aisle': ['Aisle 7','Aisle 6','Aisle 14','Aisle 9','Aisle 11']})
+    df = pd.DataFrame({'Item': ['Lights', "Car", "Bike", "Microwave", "Garbage Bags"], 'Aisle': ['Aisle 7','Aisle 6','Aisle 14','Aisle 9','Aisle 11']})
     df = df.to_dict('records')
     print("search:", search)
 

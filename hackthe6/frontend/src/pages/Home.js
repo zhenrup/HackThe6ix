@@ -4,7 +4,6 @@ import { Button, TextField, Grid, Link } from '@material-ui/core';
 import firstExPic from './storeMapEx1.png';
 import secExPic from './storeMapEx2.png';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
@@ -65,10 +64,10 @@ const Home = () => {
   }, [search]);
 
   const sendValue = () => {
-    if (valueRef.current.value === 'Lights') {
+    if (valueRef.current.value.toUpperCase() === 'LIGHTS') {
       setFirstEx(true);
-    }
-    if (valueRef.current.value === 'Garbage Bag') {
+      setSecEx(false);
+    } else if (valueRef.current.value.toUpperCase() === 'GARBAGE BAGS') {
       setSecEx(true);
       setFirstEx(false);
     } else {
@@ -81,90 +80,91 @@ const Home = () => {
 
   return (
     <>
-    <div className='frontPage'>
-    <Grid container>
-      <Grid item xs={3} align="right">
-        <h3>Welcome to</h3>
-      </Grid>
-
-      <Grid item xs={6} align="center">
-        <h2>Western Wire</h2>
-      </Grid>
-      <Grid item xs={3} align="left">
-        <h4>578 Richmond Rd E, London, ON</h4>
-      </Grid>
-
-    </Grid>
-
-      <Grid container>
-        <Grid
-          item
-          xs={12}
-          align="center"
-          style={{ marginTop: 20, marginBottom: 10 }}
-        >
-          <p>
-            Need help finding something? Input what you're looking for and
-            follow map directions to the correct aisle.
-          </p>
-        </Grid>
-      </Grid>
-      <form
-        // className={classes.root}
-        noValidate
-        autoComplete="off"
-        style={{ marginTop: 20 }}
-      >
+      <div className="frontPage">
         <Grid container>
-          <Grid item xs={11} align="center" className="searchBar">
-            <TextField
-              id="search"
-              label="Looking for items?"
-              variant="filled"
-              placeholder="Search for your ware..."
-              style={{ width: 500 }}
-              inputRef={valueRef}
-              InputProps={{
-                // className: classes.input,
-              }}
-            />
+          <Grid item xs={3} align="right">
+            <h3>Welcome to</h3>
           </Grid>
-          <Grid item xs={1} align="center" style={{ marginTop: 15 }}>
-            <Button
-              id="searchButton"
-              variant="contained"
-              size="small"
-              style={{
-                backgroundColor: "#B791F6",
-              }}
-              // endIcon={<SendIcon />}
 
-              onClick={sendValue}
-            >
-              Search
-            </Button>
+          <Grid item xs={6} align="center">
+            <h2>Western Wire</h2>
+          </Grid>
+          <Grid item xs={3} align="left">
+            <h4>578 Richmond Rd E, London, ON</h4>
           </Grid>
         </Grid>
-      </form>
-      <h1 align="center">{result}</h1>
 
-      {firstEx && (
-        <img
-          src={firstExPic}
-          alt="Logo"
-          style={{ height: '400px', width: '600px' }}
-        />
-      )}
+        <Grid container>
+          <Grid
+            item
+            xs={12}
+            align="center"
+            style={{ marginTop: 20, marginBottom: 10 }}
+          >
+            <p>
+              Need help finding something? Input what you're looking for and
+              follow map directions to the correct aisle.
+            </p>
+          </Grid>
+        </Grid>
+        <form
+          // className={classes.root}
+          noValidate
+          autoComplete="off"
+          style={{ marginTop: 20 }}
+        >
+          <Grid container>
+            <Grid item xs={11} align="center" className="searchBar">
+              <TextField
+                id="search"
+                label="Looking for items?"
+                variant="filled"
+                placeholder="Search for your ware..."
+                style={{ width: 500 }}
+                inputRef={valueRef}
+                InputProps={
+                  {
+                    // className: classes.input,
+                  }
+                }
+              />
+            </Grid>
+            <Grid item xs={1} align="center" style={{ marginTop: 15 }}>
+              <Button
+                id="searchButton"
+                variant="contained"
+                size="small"
+                style={{
+                  backgroundColor: '#B791F6',
+                }}
+                // endIcon={<SendIcon />}
 
-      {secEx && (
-        <img
-          src={secExPic}
-          alt="Logo"
-          style={{ height: '400px', width: '600px' }}
-        />
-      )}
-    </div>
-   </>
+                onClick={sendValue}
+              >
+                Search
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
+        <h1 align="center">{result}</h1>
+
+        {firstEx && (
+          <img
+            src={firstExPic}
+            alt="Logo"
+            style={{ height: '400px', width: '600px' }}
+          />
+        )}
+
+        {secEx && (
+          <img
+            src={secExPic}
+            alt="Logo"
+            style={{ height: '400px', width: '600px' }}
+          />
+        )}
+      </div>
+    </>
   );
 };
 
