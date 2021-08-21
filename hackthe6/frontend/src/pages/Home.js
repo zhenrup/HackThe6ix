@@ -4,18 +4,18 @@ import { Button, TextField, Grid, Link } from '@material-ui/core';
 import firstExPic from './storeMapEx1.png';
 import secExPic from './storeMapEx2.png';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
-      background: '#f2f2f2',
-    },
-  },
-  input: {
-    background: '#f2f2f2 !important',
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: theme.spacing(1),
+//       width: '25ch',
+//       background: '#f2f2f2',
+//     },
+//   },
+//   input: {
+//     background: '#f2f2f2 !important',
+//   },
+// }));
 
 const Home = () => {
   const [search, setSearch] = useState('');
@@ -28,7 +28,7 @@ const Home = () => {
   const firstUpdate = useRef(true);
   const valueRef = useRef('');
 
-  const classes = useStyles();
+  // const classes = useStyles();
 
   useEffect(() => {
     if (firstUpdate.current) {
@@ -101,22 +101,22 @@ const Home = () => {
         </Grid>
       </Grid>
       <form
-        className={classes.root}
+        // className={classes.root}
         noValidate
         autoComplete="off"
         style={{ marginTop: 20 }}
       >
         <Grid container>
-          <Grid item xs={11} align="center">
+          <Grid item xs={11} align="center" className="searchBar">
             <TextField
               id="search"
               label="Need Help?"
-              variant="outlined"
+              variant="filled"
               placeholder="Search for your ware..."
               style={{ width: 500 }}
               inputRef={valueRef}
               InputProps={{
-                className: classes.input,
+                // className: classes.input,
               }}
             />
           </Grid>
