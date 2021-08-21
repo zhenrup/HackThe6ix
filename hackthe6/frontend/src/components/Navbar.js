@@ -6,7 +6,7 @@ const Navbar = () => {
       <h1>WHERE WARE?</h1>
       <div className="links">
         <Link to="/">Home</Link>
-        <Link to="/create">IDK</Link>
+        <Link to="/create">Store Map</Link>
       </div>
     </nav>
   );
