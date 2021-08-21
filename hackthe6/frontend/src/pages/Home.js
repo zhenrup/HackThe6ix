@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
       width: '25ch',
+      background: '#f2f2f2',
     },
   },
 }));
@@ -65,7 +66,39 @@ const Home = () => {
 
   return (
     <>
-      <form className={classes.root} noValidate autoComplete="off">
+      <Grid container>
+        <Grid item xs={3} align="right">
+          <h3>Welcome to</h3>
+        </Grid>
+
+        <Grid item xs={6} align="center">
+          <h2>WESTERN WIRE</h2>
+        </Grid>
+
+        <Grid item xs={3} align="left">
+          <h3>hardware store</h3>
+        </Grid>
+      </Grid>
+
+      <Grid container>
+        <Grid
+          item
+          xs={12}
+          align="center"
+          style={{ marginTop: 20, marginBottom: 10 }}
+        >
+          <p>
+            Need help finding something? Input what you're looking for and
+            follow map directions to the correct aisle.
+          </p>
+        </Grid>
+      </Grid>
+      <form
+        className={classes.root}
+        noValidate
+        autoComplete="off"
+        style={{ marginTop: 20 }}
+      >
         <Grid container>
           <Grid item xs={11} align="center">
             <TextField
@@ -75,6 +108,7 @@ const Home = () => {
               placeholder="Search for your ware..."
               style={{ width: 500 }}
               inputRef={valueRef}
+              className="searchBar"
             />
           </Grid>
           <Grid item xs={1} align="center" style={{ marginTop: 15 }}>
@@ -82,6 +116,7 @@ const Home = () => {
               variant="contained"
               size="small"
               // endIcon={<SendIcon />}
+
               onClick={sendValue}
             >
               Search
