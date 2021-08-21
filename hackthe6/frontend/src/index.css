@@ -51,6 +51,14 @@
   background-color: white;
 }
 
+.MuiButton-label, .MuiButtonBase-root{
+  color: #252525;
+  background-color: white;
+}
+.MuiTouchRipple-root{
+  background-color: rgba(0, 0, 0, 0);
+}
+
 h2{
   color: #B791F6;
   font-size: 35px;
@@ -82,7 +90,7 @@ div.frontPage{
 
 
 
-/* #searchButton, #searchButton-label {
+#searchButton, #searchButton-label {
   color: #B791F6;
   background-color: white;
-} */
+}

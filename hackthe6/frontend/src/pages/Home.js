@@ -134,9 +134,9 @@ const Home = () => {
                 id="searchButton"
                 variant="contained"
                 size="small"
-                style={{
-                  backgroundColor: '#B791F6',
-                }}
+                // style={{
+                //   backgroundColor: '#B791F6',
+                // }}
                 // endIcon={<SendIcon />}
 
                 onClick={sendValue}
