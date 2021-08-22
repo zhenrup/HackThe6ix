@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 flask-cors = "*"
 pandas = "*"
+sqlalchemy = "*"
+sqlalchemy-cockroachdb = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
