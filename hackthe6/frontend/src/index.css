@@ -8,36 +8,33 @@
   background-color: #252525;
 }
 .navbar {
-  padding: 20px;
+  padding: 30px 20px 5px 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  width: 700px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
-.navbar h1 {
-  color: #22dfdf;
+.links {
+  width: 100%;
+  text-align: center;
+
 }
 
-.navbar .links {
-  margin-left: auto;
-  color: #22dfdf;
-}
-.navbar a {
-  margin-left: 16px;
+.links a {
+  margin: 10px 90px;
   text-decoration: none;
-  padding: 6px;
   color: #f2f2f2;
 }
-.navbar a:hover {
+.links a:hover {
   color: #22dfdf;
 }
+
 .content {
-  max-width: 600px;
-  margin: 40px auto;
+  max-width: 650px;
+  margin: 0 auto;
   padding: 20px;
 }
-
 .buttonSearch {
   background-color: #f2f2f2 !important;
 }
@@ -46,51 +43,162 @@
   color: #252525;
   background-color: white;
   border-radius: 10px;
+  width: 620px;
 }
 #search-label, #email-label, #name-label{
   background-color: white;
 }
 
 .MuiButton-label, .MuiButtonBase-root{
+  width: 10%;
   color: #252525;
-  background-color: white;
+  background-color: #f2f2f2;
 }
 .MuiTouchRipple-root{
   background-color: rgba(0, 0, 0, 0);
+  width: 90%;
+
 }
+
 
 h2{
   color: #B791F6;
-  font-size: 35px;
+  font-size: 40px;
   text-align: center;
-
 }
-
-h1{
-  font-size: 46px;
+#storeName{
+  text-align: left;
 }
 
 h3{
+  font-size: 20px;
   margin-top: 12px;
+  margin-right: 30px;
+  text-align: right;
+
 }
 
 h4{
-  margin-top: 8px;
   font-size: 12px;
   color: #B791F6;
+  margin-bottom: 20px;
 }
 
+
 .links{
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 div.frontPage{
   height: 100%;
 }
 
+#searchButton, #searchButton-label, #submitButton, #submitButton-label {
+  background-color: #f2f2f2;
+  text-align: center;
+  margin-top: 10px;
+}
 
+#searchButton, #searchButton-label{
+  margin-left: 280px;
+  margin-top: 20px;
+}
 
-#searchButton, #searchButton-label {
-  color: #B791F6;
-  background-color: white;
+#beautifulLogo{
+  width:60%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#map{
+  height: 400px;
+  width: 600px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#colunm{
+  float: left;
+  width:42%
+}
+#row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width:380px) {
+  #beautifulLogo{
+    width: 100%
+  }
+  .navbar {
+    padding: 30px 20px 5px 20px;
+    display: flex;
+    align-items: center;
+    width: 260px;
+    margin: 0 10%;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  
+  .links {
+    width: 100%;
+    text-align: center;
+
+  }
+  .links a {
+    margin-left: 16px;
+    text-decoration: none;
+    color: #f2f2f2;
+  }
+  .links a:hover {
+    color: #22dfdf;
+  }
+
+  #searchButton, #searchButton-label {
+    background-color: #f2f2f2;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 100px;
+  }
+
+  #search, #email, #name{
+    color: #252525;
+    background-color: white;
+    border-radius: 10px;
+    width: 240px;
+  }
+
+  .content {
+    max-width: 262px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  #map{
+    margin-top: 20px;
+    width: 260px;
+    height: 160px;
+  }
+
+  h2{
+    color: #B791F6;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  h3{
+    margin-top: 12px;
+    text-align: center;
+  }
+  
+  h4{
+    font-size: 12px;
+    color: #B791F6;
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+  #map:hover{
+    position:relative;
+    top:-4px;
+  }
 }

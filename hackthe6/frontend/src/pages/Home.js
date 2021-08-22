@@ -81,19 +81,16 @@ const Home = () => {
   return (
     <>
       <div className="frontPage">
-        <Grid container>
-          <Grid item xs={3} align="right">
+        <div id='row'>
+          <div id='colunm'>
             <h3>Welcome to</h3>
-          </Grid>
-
-          <Grid item xs={6} align="center">
-            <h2>Western Wire</h2>
-          </Grid>
-          <Grid item xs={3} align="left">
+          </div>
+          <div id='colunm'>
+            <h2 id='storeName'>Western Wire</h2>
             <h4>578 Richmond Rd E, London, ON</h4>
-          </Grid>
-        </Grid>
-
+          </div>
+        </div>
+          
         <Grid container>
           <Grid
             item
@@ -102,8 +99,8 @@ const Home = () => {
             style={{ marginTop: 20, marginBottom: 10 }}
           >
             <p>
-              Need help finding something? Input what you're looking for and
-              follow map directions to the correct aisle.
+              Need help finding something? Enter what you're looking for and
+              follow map direct1ions to the correct aisle.
             </p>
           </Grid>
         </Grid>
@@ -113,14 +110,13 @@ const Home = () => {
           autoComplete="off"
           style={{ marginTop: 20 }}
         >
-          <Grid container>
-            <Grid item xs={11} align="center" className="searchBar">
+
               <TextField
                 id="search"
                 label="Looking for items?"
                 variant="filled"
-                placeholder="Search for your ware..."
-                style={{ width: 500 }}
+                placeholder="Enter your ware..."
+                // style={{ width: 500 }}
                 inputRef={valueRef}
                 InputProps={
                   {
@@ -128,31 +124,33 @@ const Home = () => {
                   }
                 }
               />
-            </Grid>
-            <Grid item xs={1} align="center" style={{ marginTop: 15 }}>
+
               <Button
                 id="searchButton"
                 variant="contained"
                 size="small"
-                // style={{
-                //   backgroundColor: '#B791F6',
-                // }}
-                // endIcon={<SendIcon />}
+                align="center"
+                style={{
+                  textAlign:'center',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
 
                 onClick={sendValue}
               >
                 Search
               </Button>
-            </Grid>
-          </Grid>
+
         </form>
+        <br></br>
+
         <h1 align="center">{result}</h1>
 
         {firstEx && (
           <img
             src={firstExPic}
             alt="Logo"
-            style={{ height: '400px', width: '600px' }}
+            id="map"
           />
         )}
 
@@ -160,7 +158,7 @@ const Home = () => {
           <img
             src={secExPic}
             alt="Logo"
-            style={{ height: '400px', width: '600px' }}
+            id="map"
           />
         )}
       </div>
