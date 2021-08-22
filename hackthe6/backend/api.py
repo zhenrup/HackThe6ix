@@ -5,6 +5,10 @@ app = Flask(__name__)
 from dbfunc import DBFunc
 
 #THE FOLLOWING MAY CHANGE PLEASE DOUBLE CHECK WITH (sql) PARAMETER AFTER RUNNING cockroach demo --no-example-database
+#TO RUN: do this in another powershell window
+# cockroach demo --no-example-database
+# copy the (sql) attribute from the same powershell window; it will look something like this: postgres://demo:demo20972@127.0.0.1:26257?sslmode=require
+# paste the attribute you copied below so that conn = "postgres://demo:demo20972@127.0.0.1:26257?sslmode=require"
 conn = "postgres://demo:demo20972@127.0.0.1:26257?sslmode=require"
 wares = DBFunc(conn)
 
