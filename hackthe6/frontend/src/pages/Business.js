@@ -37,8 +37,6 @@ const Business = () => {
               id="name"
               label="Company Name"
               variant="filled"
-              placeholder="Name"
-              style={{ width: 500 }}
               inputRef={nameRef}
             />
           </Grid>
@@ -47,13 +45,12 @@ const Business = () => {
               id="email"
               label="Company Email"
               variant="filled"
-              placeholder="Email"
-              style={{ width: 500 }}
               inputRef={emailRef}
             />
           </Grid>
           <Grid item xs={12} align="center" style={{ marginTop: 15 }}>
             <Button
+              id="submitButton"
               variant="contained"
               size="small"
               // endIcon={<SendIcon />}
